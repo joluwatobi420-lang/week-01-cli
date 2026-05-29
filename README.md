@@ -25,7 +25,7 @@ Run the CLI:
 py cli.py "What is Python?"
 Example
 py cli.py "Explain async and await"
-Example Output
+Example Outputs
 Async and await are used for asynchronous programming...
 Project Structure
 cli.py
@@ -33,5 +33,9 @@ README.md
 Version
 
 v0.1.0
+
+Testing my local LLM tool
+Making a test change for my AI script.
+
 
 

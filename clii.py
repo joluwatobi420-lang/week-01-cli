@@ -14,11 +14,12 @@ parser.add_argument('--verbose', action='store_true')
 args = parser.parse_args()
 
 input_data = ""
-if args.file and os.path.exists(args.file):
-    with open(args.file, 'r', encoding='utf-16') as f:
+if not sys.stdin.isatty():
+        input_data = sys.stdin.read()
+elif args.text and os.path.path.exists(args.file):
         input_data = f.read()
 elif args.text:
-        input_data = " ".join(args.text)
+        input_data = " ".join(args.text)       
 
 url = "http://localhost:11434/api/generate"
 payload = {
@@ -32,7 +33,7 @@ if args.json:
     payload["format"] = "json"
 
 try:
-    response = requests.post(url, json=payload, timeout=30)
+    response = requests.post(url, json=payload, timeout=120)
     print(response.json().get("response", ""))
 except Exception as e:
     print(f"Connection Error: Make sure Ollama is open! Details: {e}")
