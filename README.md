@@ -34,8 +34,7 @@ Version
 
 v0.1.0
 
-Testing my local LLM tool
-Making a test change for my AI script.
+Done
 
 
 
